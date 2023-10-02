@@ -16,6 +16,8 @@ public class Main {
 		Fraction f2=new Fraction(4,7);
 		assert f2.toString() == "Je suis la fraction 4/7";
 		System.out.println(f2.toString());
+		
+		assert f2.getValue() == 4/7;
 	}
 
 }
