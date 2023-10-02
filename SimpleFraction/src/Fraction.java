@@ -34,8 +34,23 @@ public class Fraction {
 	}
 	
 	public double getValue() {
-		Number nb=(num*1.0)/den;
+		Number nb=num/den;
 		return nb.doubleValue();
+	}
+	
+	public double add(Fraction f) {
+		Number n1=(num*1.0)/den;
+		Number n2=(f.getNum()*1.0)/f.getDen();
+
+		return n1.doubleValue()+n2.doubleValue();
+	}
+	
+	public boolean equal(Fraction f) {
+		Number n1=(num*1.0)/den;
+		Number n2=(f.getNum()*1.0)/f.getDen();
+		
+		return n1.equals(n2);
+		
 	}
 	
 	
