@@ -1,10 +1,10 @@
 
-public class Fraction {
+public class Fraction extends Number{
 	
 	private int num;
 	private int den;
-	private static final int[] ZERO = {0,1};
-	private static final int[] UN = {1,1};
+	public static final int[] ZERO = {0,1};
+	public static final int[] UN = {1,1};
 	
 	public Fraction(int num,int den) {
 		this.num=num;
@@ -33,8 +33,8 @@ public class Fraction {
 		return den;
 	}
 	
-	public double getValue() {
-		Number nb=num/den;
+	public double getValue() { // cette méthode est devenue inutile mais on doit la laisser j'imagine
+		Number nb=(num*1.0)/den;
 		return nb.doubleValue();
 	}
 	
@@ -50,7 +50,38 @@ public class Fraction {
 		Number n2=(f.getNum()*1.0)/f.getDen();
 		
 		return n1.equals(n2);
+	}
+	
+	public int compare(Fraction f) {
+		Double n1=(num*1.0)/den;
+		Double n2=(f.getNum()*1.0)/f.getDen();
 		
+		return n1.compareTo(n2);
+	}
+
+	
+	@Override
+	public int intValue() {
+		// TODO Auto-generated method stub
+		return (int)getValue();
+	}
+
+	@Override
+	public long longValue() {
+		// TODO Auto-generated method stub
+		return (long)getValue();
+	}
+
+	@Override
+	public float floatValue() {
+		// TODO Auto-generated method stub
+		return (float)getValue();
+	}
+
+	@Override
+	public double doubleValue() {
+		// TODO Auto-generated method stub
+		return getValue();
 	}
 	
 	
